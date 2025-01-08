@@ -19,10 +19,10 @@
 
 
                 <!-- Login Form -->
-                <form id="login-form" class="form hidden">
+                <form id="login-form" method="post">
                     <h1>Welcome Back</h1>
                     <br>
-                    <input type="email" placeholder="Username or Email" required>
+                    <input type="string" placeholder="Username or Email" required>
                     <input type="password" placeholder="Password" required>
                     <a href="#" id="forpas">Forgot Username or Password?</a>
                     <br>
@@ -31,14 +31,16 @@
                 </form>
 
                 <!-- Sign-Up Form -->
-                <form id="signup-form" class="form">
+                <form id="signup-form" style="display: none;" method="POST">
                     <h1>Create Account</h1>
-                    <input type="text" placeholder="Username" required>
-                    <input type="email" placeholder="Email" required>
+                    <input type="string" placeholder="Username" required>
+                    <input type="string" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
                     <button type="submit">Sign Up</button>
                     <p class="message">Already have an account? <span onclick="showLogin()">Login</span></p>
                 </form>
+                <br>
+                <a href="{{ url_for('home') }}">Home</a>
             </div>
         </div>
 
@@ -51,13 +53,13 @@
 
     <script>
         function showLogin() {
-            document.getElementById("login-form").classList.remove("hidden");
-            document.getElementById("signup-form").classList.add("hidden");
+            document.getElementById("login-form").style.display = 'block';
+            document.getElementById("signup-form").style.display = 'none';
         }
 
         function showSignUp() {
-            document.getElementById("signup-form").classList.remove("hidden");
-            document.getElementById("login-form").classList.add("hidden");
+            document.getElementById("signup-form").style.display = 'block';
+            document.getElementById("login-form").style.display = 'none';
         }
     </script>
 </body>
