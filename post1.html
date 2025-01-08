@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poststyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/newsletter.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+    <div id="header">
+
+    </div>
+
+    <div class="blog-container">
+        <h1 class="blog-title">Compiler Design Notes for self study and Semester Exams</h1>
+        <img src="../images/compiler.png" alt="Blog Image" class="blog-image">
+        <div class="blog-content">
+            <p>Compiler design is, in fact, the translation of the source code written in a high-order programming language into the machine language that the computer will execute. It comprises a number of phases where the code is pre-processed, and parsed, its semantics or meaning are checked, and optimized, and then the final executable code is generated.
+            </p>
+            <br>
+            <p style="font-weight: 900; font-size: 1.25rem; text-align: center;">Syllabus</p> <br>
+            <p><span class="highlight">Unit-I Introduction to Compilers:</span> Structure of a compiler, Lexical Analysis, Role of Lexical
+                Analyzer, BOOT Strapping & Porting, Input Buffering, Specification of Tokens, Recognition of
+                Tokens, Lex, Finite Automata, Regular Expressions to Automata, Minimizing DFA. <br><br>
+                <span class="highlight">Unit-II Syntax Analysis:</span> Role of Parser, Grammars, Error Handling , Context-free grammars,
+                Writing a grammar, Top Down Parsing, General Strategies Recursive Descent Parser Predictive
+                Parser-LL(1) Parser-Shift Reduce Parser-LR Parser-LR (0)Item Construction of SLR Parsing
+                Table -Introduction to LALR Parser, Error Handling and Recovery in Syntax Analyzer-YACC. <br><br>
+                <span class="highlight">Unit-III Intermediate Code Generation:</span> Syntax Directed Definitions, Evaluation Orders for
+                Syntax Directed Definitions, Intermediate Languages: Syntax Tree, Three Address Code, Types
+                and Declarations, Translation of Expressions, Type Checking. <br><br>
+                <span class="highlight">Unit-IV Run-Time Environment And Code Generation:</span> Storage Organization, Stack
+                Allocation Space, Access to Non-local Data on the Stack, Heap Management, Issues in Code
+                Generation, Design of a simple Code Generator. <br><br>
+                <span class="highlight">Unit-V Code Optimization:</span> Introduction to Code optimization: sources of optimization of basic
+                blocks, loops in flow graphs, dead code elimination, loop optimization, Introduction to global
+                data flow analysis, Code Improving transformations, Data flow analysis of structure flow graph
+                Symbolic debugging of optimized code.
+            </p>
+            <br>
+            <p>To downlod the notes for your semester exams,  <a href="https://www.cet.edu.in/noticefiles/277_CD%20Complete.pdf" target="_blank" class="link">Click Here</a></p>
+        </div>
+    </div>
+    <br><br>
+
+    <div id="newsletter-container">
+
+    </div>
+
+    {% include 'partials/newsletter-container.html' %}
+
+    <div id="footer-container">
+
+    </div>
+    {% include 'partials/footer-container.html' %}
+</body>
+</html>
