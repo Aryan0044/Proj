@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All PDFs</title>
+</head>
+<body>
+    <h1>All PDFs</h1>
+    <ul>
+        {% for pdf in pdfs %}
+            <li>
+                <strong>Title:</strong> {{ pdf.title }}<br>
+                <strong>Description:</strong> {{ pdf.description }}<br>
+                <strong>Filename:</strong> {{ pdf.filename }}<br>
+                <a href="{{ url_for('download_file', filename=pdf.filename) }}">Download</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Home</a>
+</body>
+</html>
