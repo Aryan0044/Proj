@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/newsletter.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+</head>
+<body>
+
+
+<!-- 
+header
+starts
+from
+here
+-->
+
+
+    <div id="header">
+
+        {% include 'partials/header.html' %}
+
+    </div>
+
+
+<!-- 
+header
+ends
+here
+and
+hero
+section
+starts
+-->
+
+
+    <div class="content">
+        <section class="main-section">
+
+            <div class="content-left">
+                <p class="section-label">Very Excited to Introduce</p>
+                <h1 class="section-title">Seamless Learning for Brighter Futures</h1>
+                <p class="section-description">
+                    Our platform offers an effortless and seamless approach to learning and mentoring students pursuing their higher studies in Computer Science and related domain. Join us on a transformative journey to simplify education and unlock your potential.
+                </p>
+                <div class="button-group">
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('upload') }}" class="start-button">Upload File</a>
+                        <a href="{{ url_for('user_pdfs') }}" class="tour-button">Your Files</a>
+                    {% else %}
+                        <a href="{{ url_for('register') }}" class="start-button">Upload File</a>
+                        <a href="{{ url_for('register') }}" class="tour-button">Your Files</a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="content-right">
+
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/RGPV.jpg') }}" alt="sectionImage" class="section-image" />
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <!-- 
+    hero
+    section
+    ends
+    here -->
+
+
+    <!-- company -->
+
+    <!-- <div class="company-container">
+        <h2 class="company-title">Mentors from Top Companies</h2>
+        <div class="company-grid">
+
+            <div class="company-logo">
+                <img  src="./images/Google.svg" class="svg-img"/>
+                <span class="logo-txt">Google</span>
+            </div>
+
+            <div class="company-logo">
+                <img  src="./images/Microsoft.svg" class="svg-img"/>
+                <span class="logo-txt">Microsoft</span>
+            </div>
+
+            <div class="company-logo">
+                <img  src="./images/linkedin.svg" class="svg-img"/>
+                <span class="logo-txt">Linkedin</span>
+            </div>
+
+            <div class="company-logo">
+                <img  src="./images/VectorEdu.svg" class="svg-img"/>
+                <span class="logo-txt">VectorEdu</span>
+            </div>
+
+        </div>
+    </div> -->
+
+    <!-- company -->
+
+
+    <!-- 
+    main
+    blog
+    section
+    starts
+    here
+    -->
+    
+
+    <br><br><br><br>
+    <div id="heading">
+        <div id="topheading">
+            <h1 id="heading-name">
+                Popular Posts <br>
+            </h1>
+        </div>
+        <br>
+        <p id="heading-description">
+            "Explore our popular blog posts for college students in computer science!"<br>
+            Discover study notes, coding tips, project ideas, GATE prep, and the latest Tech Resources to boost your skills and succeed in your CS journey. <br>
+            You can find numerous resources that you will find very useful in your college journey. 
+        </p>
+    </div>
+    <br><br>
+    <main class="main_container">
+
+        <!-- card 1 start -->
+        <div class="card_container">
+            <a href="{{ post1 }}" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/compiler.png') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="{{ post1 }}" class="card_title_anchor">
+                    <h2 class="card_title">Compiler Design Notes</h2>
+                </a>
+                <p class="card_desc">
+                    Compiler Design Notes for semester exams and self study download now pdf file ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Aryan
+                        </span>
+                        <span class="author_date">
+                            Nov 21, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Notes</span>
+                </div>
+            </div>
+        </div>
+        <!-- card 1 ends here -->
+
+        <div class="card_container">
+            <a href="{{ post2 }}" class="card_image_container">
+                <img
+                    src=".{{ url_for('static', filename='images/gate.png') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="{{ post2 }}" class="card_title_anchor">
+                    <h2 class="card_title">Previous Year GATE Papers All Branches</h2>
+                </a>
+                <p class="card_desc">
+                    Previous year GATE (graduate Aptitude Test in Engineering) CS & IT question papers ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Dev  Yadav
+                        </span>
+                        <span class="author_date">
+                            Nov 29, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">GATE</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- card-2 ends here -->
+
+        <div class="card_container">
+            <a href="{{ post3 }}" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/infosys.png') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="{{ post3 }}" class="card_title_anchor">
+                    <h2 class="card_title">Infosys Instep Internship Details</h2>
+                </a>
+                <p class="card_desc">
+                    Infosys is one of the leading IT company in the world. Get latest updates regarding ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Aaditya
+                        </span>
+                        <span class="author_date">
+                            Nov 19, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Previous Papers</span>
+                </div>
+            </div>
+        </div>
+        <!-- card-3 ends here -->
+
+        <div class="card_container">
+            <a href="{{ post4 }}" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/python.png') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="{{ post4 }}" class="card_title_anchor">
+                    <h2 class="card_title">Python Cheatsheet</h2>
+                </a>
+                <p class="card_desc">
+                    Python programming language syntax understanding cheatsheet Download Now ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Dev Yadav
+                        </span>
+                        <span class="author_date">
+                            Nov 25, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Programming</span>
+                </div>
+            </div>
+        </div>
+        <!-- card-4 ends here -->
+
+        <div class="card_container">
+            <a href="#" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/webdev.jpg') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="#" class="card_title_anchor">
+                    <h2 class="card_title">Web Development Roadmap</h2>
+                </a>
+                <p class="card_desc">
+                    In this article you will see look on some of the popular Technoloy stacks currently used ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Aryan
+                        </span>
+                        <span class="author_date">
+                            Nov 23, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Roadmap</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- card-5 ends here -->
+
+        <div class="card_container">
+            <a href="#" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/notesbce-unsplash.jpg') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="#" class="card_title_anchor">
+                    <h2 class="card_title">Basic Computer Engineering Notes</h2>
+                </a>
+                <p class="card_desc">
+                    Study material for semester exams, short notes for last minute revision or recall .....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Piyush
+                        </span>
+                        <span class="author_date">
+                            Sept 19, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Notes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- card-6 ends here -->
+
+        <div class="card_container">
+            <a href="#" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/palcem.jpg') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="#" class="card_title_anchor">
+                    <h2 class="card_title">Important Aptitude Topics for Placements</h2>
+                </a>
+                <p class="card_desc">
+                    As many of you may kmow, Aptitude Test is the first step in your placements. Know the ....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="{{ url_for('static', filename='images/avatar.svg') }}"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Aaditya
+                        </span>
+                        <span class="author_date">
+                            Nov 28, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div >
+                    <span class="card_tag_container">Placements</span>
+                </div>
+            </div>
+        </div>
+        <!-- card-7 ends here -->
+
+        <div class="card_container">
+            <a href="#" class="card_image_container">
+                <img
+                    src="{{ url_for('static', filename='images/notestoc-unsplash.jpg') }}"
+                    alt="card 1 image"
+                    class="card_image"
+                    loading="lazy"
+                />
+            </a>
+
+            <div class="card_title_container">
+                <a href="#" class="card_title_anchor">
+                    <h2 class="card_title">Theory of Computation Notes</h2>
+                </a>
+                <p class="card_desc">
+                    Study material for semester exams, short notes for last minute revision or recall .....
+                </p>
+            </div>
+
+            <div class="card_footer_container">
+
+                <div class="author_container">
+                    <div class="author_avatar_container">
+                        <img 
+                            src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64"
+                            loading="lazy"
+                            class="author_avatar"
+                            alt="avatar 1"
+                        />
+                    </div>
+                    <div class="author_info_container">
+                        <span class="author_name">
+                            Piyush
+                        </span>
+                        <span class="author_date">
+                            Nov 26, 2024
+                        </span>
+                    </div>
+                </div>
+
+                <div  >
+                    <span class="card_tag_container">Notes</span>
+                </div>
+            </div>
+        </div>
+        <!-- card-8 ends here -->
+    </main>
+    <br><br><br>
+
+
+    <!-- 
+    main
+    blog
+    section
+    ends
+    here
+    -->
+
+
+    <!-- 
+    Features
+    section
+    starts
+    here
+    -->
+
+
+    <div class="feature-container">
+        <div id="feature-content">
+            <div class="main-info">
+                <h2 class="main-title">
+                    Our Unique Features
+                </h2>
+                <p class="main-description">
+                    This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of real written text but is random or otherwise generated.
+                </p>
+            </div>
+            
+            <div class="feature-grid">
+                <!-- card 1 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/PersonalizedLearn.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Personalized Learning
+                        </div>
+                        <div class="feature-description">
+                            Offer tailored learning experiences to cater to each and every individual student needs which suites them.
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/Affordability.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Free of Cost
+                        </div>
+                        <div class="feature-description">
+                            Provide high-quality education at absolutely free price point, making it accessible to a broader audience.
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/IndustryPatner.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Industry Relevance
+                        </div>
+                        <div class="feature-description">
+                            Collaborate with Experienced Mentors to offer accredited courses and certifications, adding credibility to our offerings.
+                        </div>
+                    </div>
+                </div>
+                <!-- card 4 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/InnovativeTech.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Technology Resources
+                        </div>
+                        <div class="feature-description">
+                            Get updates about latest trends and new products in Technology domain. Be it new Laptop, Smartphones, Tech Stacks and more.
+                        </div>
+                    </div>
+                </div>
+                <!-- card 5 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/support.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Responsive Support
+                        </div>
+                        <div class="feature-description">
+                            Provide exceptional user support and assistance to students to enhance their experiences.
+                        </div>
+                    </div>
+                </div>
+                <!-- card 6 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <img class="feature-svg" src="{{ url_for('static', filename='images/Analytics.svg') }}"/>
+                    </div>
+                    <div class="feature-info">
+                        <div class="feature-title">
+                            Professional Growth
+                        </div>
+                        <div class="feature-description">
+                            Offer wide variety of content relevant to your career and professional growth in an easy to understand manner.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 
+    Features
+    section
+    ends
+    here
+    -->
+
+
+    <!-- 
+    Testimonial
+    section
+    starts
+    here
+    -->
+
+
+    <div class="testimonial-container">
+        <div class="testimonial-content">
+            <h2 class="testimonial-title">
+                What Others Say About Us
+            </h2>
+            <div class="testimonial-grid">  
+                <!-- card 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iusto provident eaque debitis ullam obcaecati aspernatur ratione earum assumenda, laborum vel consequatur.”
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/Xi.jpg') }}"/>
+                    </div>
+                    <div class="testimonial-details">
+                        <h3 class="testimonial-name"> 
+                            Xi JingPing
+                        </h3>
+                        <p class="testimonial-desc">
+                            President, People's Republic of China
+                        </p>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iusto provident eaque debitis ullam obcaecati aspernatur ratione earum assumenda, laborum vel consequatur.”
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/modi.png') }}"/>
+                    </div>
+                    <div class="testimonial-details">
+                        <h3 class="testimonial-name"> 
+                            Narendra Modi
+                        </h3>
+                        <p class="testimonial-desc">
+                            Prime Minister, Republic of India
+                        </p>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        “Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iusto provident eaque debitis ullam obcaecati aspernatur ratione earum assumenda, laborum vel consequatur.”
+                    </div>
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/elon.png') }}"/>
+                    </div>
+                    <div class="testimonial-details">
+                        <h3 class="testimonial-name"> 
+                            Elon Musk
+                        </h3>
+                        <p class="testimonial-desc">
+                            Head of DOGE, CEO Tesla.inc, SpaceX, and, more
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 
+    Testimonial
+    section
+    ends
+    here
+    -->
+
+
+    <!-- 
+    Newsletter
+    section
+    starts
+    here
+    -->
+
+
+    <div id="newsletter-container">
+        
+        {% include 'partials/newsletter-container.html' %}
+
+    </div>
+
+
+    <!-- 
+    Newsletter
+    section
+    ends
+    here
+    -->
+
+
+    <!-- 
+    Footer
+    section
+    starts
+    here
+    -->
+
+
+    <div id="footer-container">
+        
+        {% include 'partials/footer-container.html' %}
+
+    </div>
+
+
+    <!-- 
+    Footer
+    section
+    ends
+    here
+    -->
+
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+
+
+</body>
+</html>
